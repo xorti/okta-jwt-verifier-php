@@ -30,7 +30,7 @@ class Oidc extends Discovery
      *
      * @return string
      */
-    public function getWellKnownUri(): string
+    public function getWellKnownUri()
     {
         return $this->wellKnownUri;
     }

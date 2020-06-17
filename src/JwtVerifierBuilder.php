@@ -42,7 +42,7 @@ class JwtVerifierBuilder
      * @param string $issuer The issuer URI
      * @return JwtVerifierBuilder
      */
-    public function setIssuer(string $issuer): self
+    public function setIssuer(string $issuer)
     {
         $this->issuer = $issuer;
 
@@ -55,7 +55,7 @@ class JwtVerifierBuilder
      * @param DiscoveryMethod $discoveryMethod The DiscoveryMethod instance.
      * @return JwtVerifierBuilder
      */
-    public function setDiscovery(DiscoveryMethod $discoveryMethod): self
+    public function setDiscovery(DiscoveryMethod $discoveryMethod)
     {
         $this->discovery = $discoveryMethod;
 
@@ -68,7 +68,7 @@ class JwtVerifierBuilder
      * @param Adaptor $adaptor The adaptor of the JWT library you are using.
      * @return JwtVerifierBuilder
      */
-    public function setAdaptor(Adaptor $adaptor): self
+    public function setAdaptor(Adaptor $adaptor)
     {
         $this->adaptor = $adaptor;
 
@@ -102,7 +102,7 @@ class JwtVerifierBuilder
      * @throws \InvalidArgumentException
      * @return JwtVerifier
      */
-    public function build(): JwtVerifier
+    public function build()
     {
         if (null === $this->issuer) {
             throw new \InvalidArgumentException('You must supply an issuer');

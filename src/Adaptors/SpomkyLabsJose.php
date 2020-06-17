@@ -27,7 +27,10 @@ class SpomkyLabsJose implements Adaptor
         return \Jose\Factory\JWKFactory::createFromJKU($jku);
     }
 
-    public function decode($jwt, $keys): Jwt
+    /**
+     * @inheritDoc
+     */
+    public function decode($jwt, $keys)
     {
         $decoded = (new Loader())
             ->loadAndVerifySignatureUsingKeySet(

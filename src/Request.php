@@ -60,25 +60,42 @@ class Request
         $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
     }
 
-    public function setUrl($url): Request
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function setUrl($url)
     {
         $this->url = $this->uriFactory->createUri($url);
         return $this;
     }
 
-    public function withQuery($key, $value = null): Request
+    /**
+     * @param $key
+     * @param null $value
+     * @return $this
+     */
+    public function withQuery($key, $value = null)
     {
         $this->query[$key] = $value;
 
         return $this;
     }
 
-    public function get(): ResponseInterface
+    /**
+     * @return ResponseInterface
+     */
+    public function get()
     {
         return $this->request('GET');
     }
 
-    protected function request($method): ResponseInterface
+    /**
+     * @param $method
+     * @return ResponseInterface
+     * @throws \Http\Client\Exception
+     */
+    protected function request($method)
     {
         $headers = [];
         $headers['Accept'] = 'application/json';

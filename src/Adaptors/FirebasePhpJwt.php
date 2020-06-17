@@ -40,7 +40,10 @@ class FirebasePhpJwt implements Adaptor
         return self::parseKeySet($keys);
     }
 
-    public function decode($jwt, $keys): Jwt
+    /**
+     * @inheritDoc
+     */
+    public function decode($jwt, $keys)
     {
         $decoded = (array)FirebaseJWT::decode($jwt, $keys, ['RS256']);
         return (new Jwt($jwt, $decoded));
