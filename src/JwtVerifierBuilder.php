@@ -42,7 +42,7 @@ class JwtVerifierBuilder
      * @param string $issuer The issuer URI
      * @return JwtVerifierBuilder
      */
-    public function setIssuer(string $issuer)
+    public function setIssuer($issuer)
     {
         $this->issuer = $issuer;
 
