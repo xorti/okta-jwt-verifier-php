@@ -55,7 +55,7 @@ class JwtVerifier
     protected $adaptor;
 
     public function __construct(
-        string $issuer,
+        $issuer,
         DiscoveryMethod $discovery = null,
         Adaptor $adaptor = null,
         Request $request = null,
